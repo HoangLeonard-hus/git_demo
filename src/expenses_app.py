@@ -28,3 +28,30 @@ def add_expense(expenses):
     save_expenses(expenses)
     print("Đã thêm khoản chi tiêu thành công.")
 
+def list_expenses(expenses):
+    """Hiển thị danh sách các khoản chi tiêu."""
+    if not expenses:
+        print("Danh sách chi tiêu trống!")
+        return
+    print("\n--- Danh Sách Chi Tiêu ---")
+    for idx, expense in enumerate(expenses, start=1):
+        print(f"{idx}. {expense['name']} - {expense['amount']} VND - {expense['category']}")
+    print("-----------------------------\n")
+
+def delete_expense(expenses):
+    """Xóa một khoản chi tiêu theo số thứ tự."""
+    list_expenses(expenses)
+    if not expenses:
+        return
+    try:
+        idx = int(input("Nhập số thứ tự khoản chi tiêu cần xóa: "))
+        if 1 <= idx <= len(expenses):
+            removed = expenses.pop(idx - 1)
+            save_expenses(expenses)
+            print(f"Đã xóa khoản chi tiêu: {removed['name']}")
+        else:
+            print("Số thứ tự không hợp lệ.")
+    except ValueError:
+        print("Vui lòng nhập số hợp lệ.")
+
+
