@@ -54,4 +54,28 @@ def delete_expense(expenses):
     except ValueError:
         print("Vui lòng nhập số hợp lệ.")
 
+def main():
+    expenses = load_expenses()
+    menu = """
+Chọn một tùy chọn:
+1. Thêm khoản chi tiêu
+2. Hiển thị danh sách chi tiêu
+3. Xóa khoản chi tiêu
+4. Thoát
+Lựa chọn của bạn: """
+    while True:
+        choice = input(menu).strip()
+        if choice == "1":
+            add_expense(expenses)
+        elif choice == "2":
+            list_expenses(expenses)
+        elif choice == "3":
+            delete_expense(expenses)
+        elif choice == "4":
+            print("Thoát chương trình. Hẹn gặp lại!")
+            break
+        else:
+            print("Lựa chọn không hợp lệ, vui lòng chọn lại.")
 
+if __name__ == "__main__":
+    main()
