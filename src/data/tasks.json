@@ -1,0 +1,17 @@
+[
+    {
+        "name": "xin chao git",
+        "description": "tim hieu document ve git",
+        "completed": false
+    },
+    {
+        "name": "hoc python",
+        "description": "doc tai lieu va viet chuong trinh don gian",
+        "completed": false
+    },
+    {
+        "name": "lam bai tap",
+        "description": "hoan thanh bai tap ve nha",
+        "completed": true
+    }
+]
