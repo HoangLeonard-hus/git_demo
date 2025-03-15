@@ -13,3 +13,9 @@ def load_expenses():
                 return []
     return []
 
+def save_expenses(expenses):
+    """Lưu danh sách chi tiêu vào file JSON."""
+    with open(EXPENSES_FILE, "w", encoding="utf-8") as f:
+        json.dump(expenses, f, indent=4, ensure_ascii=False)
+
+
