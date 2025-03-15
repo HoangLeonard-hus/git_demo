@@ -18,4 +18,13 @@ def save_expenses(expenses):
     with open(EXPENSES_FILE, "w", encoding="utf-8") as f:
         json.dump(expenses, f, indent=4, ensure_ascii=False)
 
+def add_expense(expenses):
+    """Thêm một khoản chi tiêu mới vào danh sách."""
+    name = input("Nhập tên khoản chi tiêu: ").strip()
+    amount = input("Nhập số tiền: ").strip()
+    category = input("Nhập danh mục (ăn uống, đi lại, giải trí, v.v.): ").strip()
+    expense = {"name": name, "amount": amount, "category": category}
+    expenses.append(expense)
+    save_expenses(expenses)
+    print("Đã thêm khoản chi tiêu thành công.")
 
